@@ -24,7 +24,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   }, [locale]);
 
   const value = useMemo(
-    () => ({ locale, setLocale: setLocaleState, t: translations[locale] }),
+    () => ({ locale, setLocale: setLocaleState, t: translations[locale] as Translations }),
     [locale],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
